@@ -36,6 +36,7 @@ public class Train {
     public void printManifest() {
         for (Car car : cars) {
             car.printManifest();
+        }
     }
 
 }
