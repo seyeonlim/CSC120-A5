@@ -2,12 +2,12 @@ public class Engine {
 
     private FuelType fuelType;
     private double currentFuelLv;
-    private double maxFuelLv;
+    private double fuelCapacity;
 
-    public Engine(FuelType fuelType, double currentFuelLv, double maxFuelLv) {
+    public Engine(FuelType fuelType, double currentFuelLv, double fuelCapacity) {
         this.fuelType = fuelType;
         this.currentFuelLv = currentFuelLv;
-        this.maxFuelLv = maxFuelLv;
+        this.fuelCapacity = fuelCapacity;
     }
 
     public FuelType getFuelType() {
@@ -18,12 +18,12 @@ public class Engine {
         return this.currentFuelLv;
     }
 
-    public double getMaxFuelLv() {
-        return this.maxFuelLv;
+    public double getFuelCapacity() {
+        return this.fuelCapacity;
     }
 
     public void refuel() {
-        this.currentFuelLv = maxFuelLv;
+        this.currentFuelLv = fuelCapacity;
     }
 
     public void go() {

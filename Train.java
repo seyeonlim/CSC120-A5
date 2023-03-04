@@ -5,11 +5,11 @@ public class Train {
     private final Engine engine;
     private ArrayList<Car> cars;
 
-    public Train(FuelType fuelType, double currentFuelLv, double maxFuelLv, int nCars, int maxCapacity) {
-        engine = new Engine(fuelType, currentFuelLv, maxFuelLv);
+    public Train(FuelType fuelType, double currentFuelLv, double fuelCapacity, int nCars, int passengerCapacity) {
+        engine = new Engine(fuelType, currentFuelLv, fuelCapacity);
         cars = new ArrayList<>();
         for (int i = 0; i < nCars; i++) {
-            cars.add(new Car(maxCapacity));
+            cars.add(new Car(passengerCapacity));
         }
     }
 
@@ -22,7 +22,7 @@ public class Train {
     }
     
     public int getMaxCapacity() {
-        return this.cars.size() * cars.get(0).getCapacity();
+        return this.cars.size() * cars.get(0).getCapacity(); //should change when passenger capacity isn't the same for all cars
     }
 
     public int seatsRemaining() {
@@ -37,6 +37,20 @@ public class Train {
         for (Car car : cars) {
             car.printManifest();
         }
+    }
+
+    public static void main(String[] args) {
+        Train myTrain = new Train(FuelType.STEAM, 100.0, 200.0, 5, 3);
+        Passenger me = new Passenger("Seyeon");
+        Passenger friend = new Passenger("Bob");
+        System.out.println(myTrain.getEngine());
+        System.out.println(myTrain.getCar(0));
+        System.out.println(myTrain.getMaxCapacity());
+        myTrain.cars.get(0).addPassenger(friend);
+        myTrain.cars.get(2).addPassenger(me);
+        System.out.println(myTrain.seatsRemaining());
+        myTrain.printManifest();
+        
     }
 
 }

@@ -3,23 +3,23 @@ import java.util.ArrayList;
 public class Car {
 
     private ArrayList<Passenger> passengersOnboard;
-    private int maxCapacity;
+    private int passengerCapacity;
 
-    public Car(int maxCapacity) {
-        this.maxCapacity = maxCapacity;
-        this.passengersOnboard = new ArrayList<Passenger>(maxCapacity);
+    public Car(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+        this.passengersOnboard = new ArrayList<Passenger>(passengerCapacity);
     }
 
     public int getCapacity() {
-        return maxCapacity;
+        return passengerCapacity;
     }
 
     public int seatsRemaining() {
-        return maxCapacity - this.passengersOnboard.size();
+        return passengerCapacity - this.passengersOnboard.size();
     }
 
     public void addPassenger(Passenger p) {
-        if (this.passengersOnboard.size() >= maxCapacity) {
+        if (this.passengersOnboard.size() >= passengerCapacity) {
 			throw new RuntimeException("Car is already at capacity; cannot add passenger " + p.name);
 		}
 		if (this.passengersOnboard.contains(p)) {

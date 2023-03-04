@@ -26,6 +26,19 @@ public class Passenger {
         }
     }
 
+    public static void main(String[] args) {
+        Car myCar = new Car(3);
+        Passenger me = new Passenger("Seyeon");
+        Passenger friend = new Passenger("Bob");
+        me.boardCar(myCar);
+        friend.boardCar(myCar);
+        myCar.printManifest();
+        me.getOffCar(myCar);
+        myCar.printManifest();
+        friend.boardCar(myCar);
+        me.getOffCar(myCar);
+        
+    }
 }
 
 /*- `public void boardCar(Car c)` can call `c.addPassenger(this)` 
