@@ -33,7 +33,7 @@ public class Engine {
         }
 
         myEngine.refuel();
-        
+
         try {
             while (true) {
                 myEngine.go();
@@ -43,7 +43,7 @@ public class Engine {
         }
     }
 }
-/*We recommend you start by implementing the `Engine` class. Your `Engine` class will need:
+/*We recommend you startt by implementing the `Engine` class. Your `Engine` class will need:
  
   - a private `FuelType` attribute to indicate what type of fuel it uses, and `double`s to store the 
   current and maximum fuel levels (along with an approproate accessors for each)
