@@ -10,6 +10,18 @@ public class Engine {
         this.maxFuelLv = maxFuelLv;
     }
 
+    public FuelType getFuelType() {
+        return this.fuelType;
+    }
+
+    public double getCurrentFuelLv() {
+        return this.currentFuelLv;
+    }
+
+    public double getMaxFuelLv() {
+        return this.maxFuelLv;
+    }
+
     public void refuel() {
         this.currentFuelLv = maxFuelLv;
     }
@@ -29,7 +41,7 @@ public class Engine {
                 myEngine.go();
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage()); // Out of fuel
+            System.err.println(e.getMessage());
         }
 
         myEngine.refuel();
@@ -39,7 +51,7 @@ public class Engine {
                 myEngine.go();
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage()); // Out of fuel
+            System.err.println(e.getMessage());
         }
     }
 }
