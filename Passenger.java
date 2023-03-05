@@ -41,7 +41,7 @@ public class Passenger {
     }
 }
 
-/*- `public void boardCar(Car c)` can call `c.addPassenger(this)` 
+/*- '`public void boardCar(Car c)` can call `c.addPassenger(this)` 
 to board a given `Car` (_Hint: this method should be ready to `catch` 
 the `RuntimeException` that will be thrown by `c.addPassenger(...)` 
 in the event that the car is full._)
