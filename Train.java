@@ -43,7 +43,7 @@ public class Train {
      * @return information of a certain car on train
      */
     public Car getCar(int i) {
-        return this.cars.get(i);
+        return this.cars.get(i-1);
     }
     
     /**
@@ -51,7 +51,7 @@ public class Train {
      * @return the maximum capacity of the whole train
      */
     public int getMaxCapacity() {
-        return this.cars.size() * cars.get(0).getCapacity(); //should change when passenger capacity isn't the same for all cars
+        return this.cars.size() * cars.get(1).getCapacity(); //should change when passenger capacity isn't the same for all cars
     }
 
     /**
@@ -84,33 +84,13 @@ public class Train {
         Passenger me = new Passenger("Seyeon");
         Passenger friend = new Passenger("Bob");
         System.out.println(myTrain.getEngine());
-        System.out.println(myTrain.getCar(0));
+        System.out.println(myTrain.getCar(1));
         System.out.println(myTrain.getMaxCapacity());
         myTrain.cars.get(0).addPassenger(friend);
-        myTrain.cars.get(2).addPassenger(me);
+        myTrain.cars.get(1).addPassenger(me);
         System.out.println(myTrain.seatsRemaining());
         myTrain.printManifest();
         
     }
 
 }
-
-/*
- * -  a private `Engine` attribute, which we will mark with the keyword 
- * `final` to establish the **composition** relationship 
- * (e.g. `private final Engine engine;`)
- -  a private `ArrayList` to keep track of the `Car`s currently attached
- -  a constructor `public Train(FuelType fuelType, double fuelCapacity, 
- int nCars, int passengerCapacity)` which will initialize the `Engine` 
- and `Car`s and store them
- -  a couple of accessors: 
-     -  `public Engine getEngine()`
-     -  `public Car getCar(int i)` to return the `i`th car
-     -  `public int getMaxCapacity()` which will return the maximum 
-     total capacity across all `Car`s
-     -  `public int seatsRemaining()` which will return the number of 
-     remaining open seats across all `Car`s
-- and finally, its own `public void printManifest()` that prints a 
-roster of all `Passenger`s onboard (_Hint: your `Car`s can help!_)
-
- */

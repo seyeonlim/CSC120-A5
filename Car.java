@@ -10,15 +10,15 @@ import java.util.ArrayList;
 public class Car {
 
     private ArrayList<Passenger> passengersOnboard;
-    private int passengerCapacity;
+    private int carCapacity;
 
     /**
      * Creates a Car and an ArrayList, which is for boarding passengers, and initializes all attributes
-     * @param passengerCapacity
+     * @param carCapacity
      */
-    public Car(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
-        this.passengersOnboard = new ArrayList<Passenger>(passengerCapacity);
+    public Car(int carCapacity) {
+        this.carCapacity = carCapacity;
+        this.passengersOnboard = new ArrayList<Passenger>(carCapacity);
     }
 
     /**
@@ -26,7 +26,7 @@ public class Car {
      * @return the capacity of a car
      */
     public int getCapacity() {
-        return passengerCapacity;
+        return carCapacity;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Car {
      * @return the total number of seats remianing in a car
      */
     public int seatsRemaining() {
-        return passengerCapacity - this.passengersOnboard.size();
+        return carCapacity - this.passengersOnboard.size();
     }
 
     /**
@@ -44,7 +44,7 @@ public class Car {
      * @throws RuntimeException when the passenger is already onboard
      */
     public void addPassenger(Passenger p) {
-        if (this.passengersOnboard.size() >= passengerCapacity) {
+        if (this.passengersOnboard.size() >= carCapacity) {
 			throw new RuntimeException("Car is already at capacity; cannot add passenger " + p.name);
 		}
 		if (this.passengersOnboard.contains(p)) {
@@ -104,18 +104,3 @@ public class Car {
         me.getOffCar(myCar);
     }
 }
-
-
-/*- a private `ArrayList` where it will store the `Passenger`s currently onboard, 
-and an `int` for the `Car`'s maximum capacity (since `ArrayList`s will expand as we add objects, 
-we'll need to manually limit their size)
- -   - a constructor, which takes in an initial value for the `Car`'s maximum capacity 
- and initializes an appropriately-sized `ArrayList`
- - accessor-like methods `public int getCapacity()` and `public int seatsRemaining()` 
- that return the maximum capacity and remaining seats, respectively
- - methods `public void addPassenger(Passenger p)` and `public void removePassenger(Passenger p)` 
- to add or remove a `Passenger` from the `Car` (_Hint: don't forget to check that there are seats available 
- if someone wants to board, and to confirm that the `Passenger` is actually onboard before trying to remove them! 
- If you encounter a problem, throw a `RuntimeException`._)
- - and a final method `public void printManifest()` that prints out a list of all 
- `Passenger`s aboard the car (or "This car is EMPTY." if there is no one on board) */
