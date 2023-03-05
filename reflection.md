@@ -1,7 +1,9 @@
 Use this file to record your reflection on this assignment.
 
 - What are your initial impressions of how `Association` affects your programming?
+
 I realized that association, aggregation, and composition relationships between classes change how I set my attributes. Depending on those relationships, some attributes were set as private while some were set as public. It also changed the way I write the code; for instance, because the engine and the train have a composition relationship, the 'Train' class itself was mainly based on the 'Engine' class. It required me a new way of thinking, but I could start to see what object-oriented programming is like.
 
 - What worked, what didn't, what advice would you give someone taking this course in the future?
+
 While I didn't face a lot of problems while programming the 'Engine' class, 'Passenger' class, and 'Car' class, connecting these classes altogether in the 'Train' class was quite difficult and confusing. I kept forgetting what methods I made in other classes, and the index of the Car ArrayList caused problems several times. Also, printing out the names of passengers in different cars was one of the challenging parts. However, after going through several trials, I succeeded in making individual classes work well with no errors and connected them in the 'Train' class, although it was not easy. Another thing I learned was the try-catch method and throwing exceptions; I couldn't fully understand this method during the lecture, but after using them in the 'Car' class and the 'Engine' class, I could clearly see what it does and thought I could use it for later assignments when I'm worried that I might get an error after writing new lines of code. To future students who will take this class, I would tell them to make a list of what each individual class is supposed to do and think carefully about how they will utilize each method they made in different classes in the most efficient way.
