@@ -15,6 +15,7 @@ public class Engine {
      * Creates an engine and initializes all attributes
      * @param fuelType the fuel type of engine
      * @param fuelCapacity the maximum fuel level of engine
+     * @param currentFuelLv current fuel level of engine
      */
     public Engine(FuelType fuelType, double fuelCapacity) {
         this.fuelType = fuelType;
