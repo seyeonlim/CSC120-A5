@@ -45,13 +45,13 @@ public class Car {
      */
     public void addPassenger(Passenger p) {
         if (this.passengersOnboard.size() >= carCapacity) {
-			throw new RuntimeException("Car is already at capacity; cannot add passenger " + p.name);
+			throw new RuntimeException("Car is already at capacity; cannot add passenger " + p.getName());
 		}
 		if (this.passengersOnboard.contains(p)) {
-			throw new RuntimeException("Passenger " + p.name + " is already onboard.");
+			throw new RuntimeException("Passenger " + p.getName() + " is already onboard.");
 		}
 		this.passengersOnboard.add(p);
-		System.out.println("Successfully added passenger " + p.name);
+		System.out.println("Successfully added passenger " + p.getName());
 	}
 
     /**
@@ -61,10 +61,10 @@ public class Car {
      */
     public void removePassenger(Passenger p) {
         if (!this.passengersOnboard.contains(p)) { 
-            throw new RuntimeException("Passenger " + p.name + " is not onboard; cannot remove passenger.");
+            throw new RuntimeException("Passenger " + p.getName() + " is not onboard; cannot remove passenger.");
         }
         this.passengersOnboard.remove(p);
-        System.out.println("Passenger " + p.name + " successfully removed.");
+        System.out.println("Passenger " + p.getName() + " successfully removed.");
     
     }
 

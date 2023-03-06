@@ -14,13 +14,12 @@ public class Engine {
     /**
      * Creates an engine and initializes all attributes
      * @param fuelType the fuel type of engine
-     * @param currentFuelLv current fuel level of engine
      * @param fuelCapacity the maximum fuel level of engine
      */
-    public Engine(FuelType fuelType, double currentFuelLv, double fuelCapacity) {
+    public Engine(FuelType fuelType, double fuelCapacity) {
         this.fuelType = fuelType;
-        this.currentFuelLv = currentFuelLv;
         this.fuelCapacity = fuelCapacity;
+        this.currentFuelLv = fuelCapacity;
     }
 
     /**
@@ -72,7 +71,7 @@ public class Engine {
      * @param args
      */
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0, 200.0);
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 200.0);
         try {
             while (true) {
                 myEngine.go();

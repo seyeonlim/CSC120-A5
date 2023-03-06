@@ -7,7 +7,7 @@
  */
 public class Passenger {
     
-    String name;
+    private String name;
 
     /**
      * creates a passenger and initializes the name attribute
@@ -17,6 +17,13 @@ public class Passenger {
         this.name = name;
     }
 
+    /**
+     * an accessor to get passenger's name
+     * @return passenger's name
+     */
+    public String getName() {
+        return name;
+    }
     /**
      * a method that prints out the name of the passenger
      */

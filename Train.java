@@ -16,13 +16,12 @@ public class Train {
     /**
      * creates a train; sets its engine and creates an ArrayList for the cars attached to the train
      * @param fuelType
-     * @param currentFuelLv
      * @param fuelCapacity
      * @param nCars
      * @param passengerCapacity
      */
-    public Train(FuelType fuelType, double currentFuelLv, double fuelCapacity, int nCars, int passengerCapacity) {
-        engine = new Engine(fuelType, currentFuelLv, fuelCapacity);
+    public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity) {
+        engine = new Engine(fuelType, fuelCapacity);
         cars = new ArrayList<>();
         for (int i = 0; i < nCars; i++) {
             cars.add(new Car(passengerCapacity));
@@ -51,7 +50,7 @@ public class Train {
      * @return the maximum capacity of the whole train
      */
     public int getMaxCapacity() {
-        return this.cars.size() * cars.get(1).getCapacity(); //should change when passenger capacity isn't the same for all cars
+        return this.cars.size() * cars.get(1).getCapacity();
     }
 
     /**
@@ -70,8 +69,9 @@ public class Train {
      * a method that prints out the names of passengers on train
      */
     public void printManifest() {
-        for (Car car : cars) {
-            car.printManifest();
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println("Car " + (i + 1) + ":");
+            cars.get(i).printManifest();
         }
     }
 
@@ -80,7 +80,7 @@ public class Train {
      * @param args
      */
     public static void main(String[] args) {
-        Train myTrain = new Train(FuelType.STEAM, 100.0, 200.0, 5, 3);
+        Train myTrain = new Train(FuelType.STEAM, 200.0, 5, 3);
         Passenger me = new Passenger("Seyeon");
         Passenger friend = new Passenger("Bob");
         System.out.println(myTrain.getEngine());
