@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 6, 2023
+ * @version March 7, 2023
  * Description: A class that creates a train using the Engine class and Car class.
  *              Allows access to the information of engine and car, the total capacity of the train and the
  *              seats remaining, and the names of passengers on train.
@@ -37,7 +37,7 @@ public class Train {
     }
 
     /**
-     * a method that returns the information of a certain car using the index of cars ArrayList
+     * a method that returns the information of the 'i'th car
      * @param i
      * @return information of a certain car on train
      */
@@ -66,7 +66,7 @@ public class Train {
     }
 
     /**
-     * a method that prints out the names of passengers on train
+     * a method that prints out the names of passengers on train with the car number
      */
     public void printManifest() {
         for (int i = 0; i < cars.size(); i++) {

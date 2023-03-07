@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 6, 2023
+ * @version March 7, 2023
  * Description: A class that creates an engine of a train with the fuel type, current fuel level, 
  *              and fuel capacity as its attributes.
  */

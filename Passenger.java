@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 6, 2023
+ * @version March 7, 2023
  * Description: A class that creates passengers to be on the train. Can print out the names of passengers 
  *              and allows passengers to board or get off car.
  */
@@ -56,7 +56,7 @@ public class Passenger {
     }
 
     /**
-     * Demonstration of using boardCar(...) and getOffCar(...) method
+     * Demonstration of using boardCar(...) and getOffCar(...) methods
      * @param args
      */
     public static void main(String[] args) {

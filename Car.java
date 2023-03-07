@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 6, 2023
+ * @version March 7, 2023
  * Description: A class that creates a car for a train. Allows passengers to onboard or get off the car and can 
  *              return the capacity of the car, seats remaining, and the names of passengers onboard.
  */
@@ -69,7 +69,7 @@ public class Car {
     }
 
     /**
-     * a method that prints the names of the passengers onboard
+     * a method that prints the names of the passengers onboard. Prints oyt a message when there is no passenger onboard
      */
     public void printManifest() {
         if (this.passengersOnboard.size() == 0) {
